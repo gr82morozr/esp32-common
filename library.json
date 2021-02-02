@@ -1,0 +1,15 @@
+{
+    "name": "iot-common",
+    "version": "0.0.1",
+    "keywords": [
+      "pwm"
+    ],
+    "description": "Portable C++ common libraries for IOT, robotics development.",
+    "repository":
+    {
+        "type": "git",
+        "url": "https://github.com/gr82morozr/iot-common"
+    },
+    "frameworks": "arduino",
+    "platforms": "*"
+}
