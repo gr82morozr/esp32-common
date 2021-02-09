@@ -1,36 +1,9 @@
-/*
- * Task.h
- *
- *  Created on: Mar 4, 2017
- *      Author: kolban
- */
+#pragma once
 
-#ifndef COMPONENTS_CPP_UTILS_TASK_H_
-#define COMPONENTS_CPP_UTILS_TASK_H_
-#include <freertos/FreeRTOS.h>
+//#include <freertos/FreeRTOS.h>
 //#include <freertos/task.h>
 #include <string>
-/**
- * @brief Encapsulate a runnable task.
- *
- * This class is designed to be subclassed with the method:
- *
- * @code{.cpp}
- * void run(void *data) { ... }
- * @endcode
- *
- * For example:
- *
- * @code{.cpp}
- * class CurlTestTask : public Task {
- *    void run(void *data) {
- *       // Do something
- *    }
- * };
- * @endcode
- *
- * implemented.
- */
+
 class Task {
 public:
 	Task(std::string taskName = "Task", uint16_t stackSize = 10000, uint8_t priority = 5);
@@ -64,4 +37,3 @@ private:
 
 };
 
-#endif /* COMPONENTS_CPP_UTILS_TASK_H_ */

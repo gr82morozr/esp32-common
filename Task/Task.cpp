@@ -1,12 +1,8 @@
 #include <Arduino.h>
-#include <freertos/FreeRTOS.h>
-#include <freertos/task.h>
 #include <string>
 
 #include "Task.h"
 #include "sdkconfig.h"
-
-static const char* LOG_TAG = "Task";
 
 
 /**
