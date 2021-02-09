@@ -1,7 +1,10 @@
-#pragma once
+#pragma once 
+#ifndef _IOT_COMMON_
+#define _IOT_COMMON_
+
 #include <Arduino.h>
 
-#define _BAUD_RATE  115200
+#define _BAUD_RATE_  115200
 #ifdef _DEBUG_
     #define PRINT(x)        Serial.print(x)
     #define PRINTF(x, y)    Serial.print(x, y)
@@ -14,5 +17,5 @@
     #define PRINTLNF(x, y)
 #endif 
 
-
-// _DEBUG_
+int sign(float x);
+#endif
