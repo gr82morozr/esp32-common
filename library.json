@@ -1,14 +1,14 @@
 {
-    "name": "IOT Common",
+    "name": "ESP32 Common",
     "version": "0.0.1",
     "keywords": [
-      "pwm"
+      "Task", "Multicore"
     ],
-    "description": "Portable C++ common libraries for IOT, robotics development.",
+    "description": "Portable C++ common libraries for ESP32, robotics development.",
     "repository":
     {
         "type": "git",
-        "url": "https://github.com/gr82morozr/iot-common"
+        "url": "https://github.com/gr82morozr/esp32-common"
     },
     "frameworks": "arduino",
     "platforms": "*"
