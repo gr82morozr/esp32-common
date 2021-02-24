@@ -1,6 +1,4 @@
 #pragma once 
-#ifndef _IOT_COMMON_
-#define _IOT_COMMON_
 
 #include <Arduino.h>
 
@@ -17,5 +15,16 @@
     #define PRINTLNF(x, y)
 #endif 
 
+
+
+
 int sign(float x);
-#endif
+String to_str(char * data);
+char * to_chars(int data);
+char * to_chars(long data);
+char * to_chars(double data);
+char * to_chars(String data);
+char * copy_chars(char * src_chars);
+char * concat_chars(char * src1_chars, char * src2_chars);
+char * concat_chars(char * src1_chars, char * src2_chars, char * src3_chars);
+

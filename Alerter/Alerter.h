@@ -18,7 +18,7 @@ class Alerter : public Task {
     };
 
     Alerter(int led_pin, int beeper_pin, int type, int core) ;
-    Alerter(int led_pin, int beeper_pin, int type, int core) ;
+
 
     
   private:
