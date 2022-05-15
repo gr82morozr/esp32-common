@@ -1,8 +1,9 @@
 #pragma once 
 
 #include <Arduino.h>
+#include <ArduinoJson.h>
+#define _BAUD_RATE_         115200
 
-#define _BAUD_RATE_  115200
 #ifdef _DEBUG_
     #define PRINT(x)        Serial.print(x)
     #define PRINTF(x, y)    Serial.print(x, y)
@@ -22,6 +23,7 @@ int sign(float x);
 
 
 String to_str(char * data);
+void init();
 char * to_chars(int data);
 char * to_chars(long data);
 char * to_chars(double data);

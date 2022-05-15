@@ -1,15 +1,33 @@
 {
-    "name": "ESP32 Common",
-    "version": "0.0.1",
-    "keywords": [
-      "Task", "Multicore"
-    ],
-    "description": "Portable C++ common libraries for ESP32, robotics development.",
-    "repository":
-    {
-        "type": "git",
-        "url": "https://github.com/gr82morozr/esp32-common"
+  "name": "ESP32 Common",
+  "version": "0.0.1",
+  "authors": {
+    "name": "Great Tomorrow",
+    "email": "gr82morozr@gmail.com"
+  },
+  "keywords": [
+    "Task",
+    "Multicore",
+    "EEPROM"
+  ],
+  "description": "Portable C++ common libraries for ESP32, robotics development.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gr82morozr/esp32-common"
+  },
+  "dependencies": [
+    {  
+      "owner": "bblanchon",
+      "name": "ArduinoJson",
+      "version": "^6.19.4"
     },
-    "frameworks": "arduino",
-    "platforms": "*"
+
+    {  
+      "name": "esp32-pwm",
+      "version": " https://github.com/gr82morozr/esp32-pwm.git"
+    }
+
+  ],
+  "frameworks": "arduino",
+  "platforms": "*"
 }

@@ -1,6 +1,13 @@
 #include <Arduino.h>
 #include <Common/Common.h>
 
+void init() {
+  Serial.begin(_BAUD_RATE_);
+  
+}
+
+
+
 /*************************************************
  * 
  *  Common math functions
