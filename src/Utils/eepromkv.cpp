@@ -29,11 +29,19 @@ void EEPROMKVClass::clear() {
 }
 
 
+String EEPROMKVClass::get(String k) {
+  return (EEPROMKVClass::read(k));
+}
+
 
 String EEPROMKVClass::read(String k) {
   EEPROMKVClass::read_all();
   String value = json_data[k];
   return (value);
+}
+
+int EEPROMKVClass::put(String k, String v) {
+  return EEPROMKVClass::write( k, v);
 }
 
 int EEPROMKVClass::write(String k, String v) {

@@ -3,7 +3,7 @@
 
 void init() {
   Serial.begin(_BAUD_RATE_);
-  
+  setCpuFrequencyMhz(240); 
 }
 
 

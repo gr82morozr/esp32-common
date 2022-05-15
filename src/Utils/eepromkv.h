@@ -7,12 +7,14 @@
 
 class EEPROMKVClass {
   public:
-    void read_all();
+    String get(String k);
     String read(String k);
+    int put(String k, String v);
     int write(String k, String v);
     void clear();
     
   private:
+    void read_all();
     StaticJsonDocument<EEPROM_SIZE> json_data;  // declare main data object 
 
 

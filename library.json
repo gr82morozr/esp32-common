@@ -24,7 +24,7 @@
 
     {  
       "name": "esp32-pwm",
-      "version": " https://github.com/gr82morozr/esp32-pwm.git"
+      "version": "https://github.com/gr82morozr/esp32-pwm.git"
     }
 
   ],
