@@ -1,6 +1,6 @@
 {
-  "name": "ESP32 Common",
-  "version": "0.0.1",
+  "name": "esp32-common",
+  "version": "0.0.2",
   "authors": {
     "name": "Great Tomorrow",
     "email": "gr82morozr@gmail.com"
