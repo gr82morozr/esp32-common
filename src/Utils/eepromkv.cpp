@@ -38,6 +38,7 @@ String EEPROMKVClass::get(String k) {
 String EEPROMKVClass::read(String k) {
   EEPROMKVClass::read_all();
   String value = json_data[k];
+  EEPROM.end();
   return (value);
 }
 

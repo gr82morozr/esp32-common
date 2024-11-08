@@ -5,7 +5,7 @@
 
 
 
-#define EEPROM_SIZE 512  //ESP32 EEPROM_SIZE
+#define EEPROM_SIZE 1024  //ESP32 EEPROM_SIZE
 
 class EEPROMKVClass {
   public:
