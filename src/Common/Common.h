@@ -2,8 +2,12 @@
 
 #include <Arduino.h>
 #include <ArduinoJson.h>
+#include "freertos/FreeRTOS.h"  // Correct include path for FreeRTOS
+#include "freertos/task.h"      // Required to use vTaskDelay(), xTaskCreate(), etc.
+#include "Utils/eepromkv.h"
 
 #define _BAUD_RATE_         115200
+#define DELAY(x)            vTaskDelay(pdMS_TO_TICKS(x))
 
 #ifdef _DEBUG_
     #define PRINT(x)        Serial.print(x)
@@ -18,7 +22,7 @@
 #endif 
 
 
-void init();
+void common_init();
 
 int sign(float x);
 

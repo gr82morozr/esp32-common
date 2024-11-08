@@ -5,7 +5,7 @@
 
 
 
-#define EEPROM_SIZE 4096  //ESP32 EEPROM_SIZE
+#define EEPROM_SIZE 512  //ESP32 EEPROM_SIZE
 
 class EEPROMKVClass {
   public:
@@ -18,7 +18,6 @@ class EEPROMKVClass {
   private:
     void read_all();
     StaticJsonDocument<EEPROM_SIZE> json_data;  // declare main data object 
-    
 
 };
 

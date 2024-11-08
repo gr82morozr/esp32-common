@@ -25,6 +25,7 @@ void EEPROMKVClass::read_all() {
 void EEPROMKVClass::clear() {
   EEPROM.begin(EEPROM_SIZE);
   for (int i = 0; i < EEPROM_SIZE; i++) EEPROM.write(i, '\0');
+  EEPROM.commit();
   EEPROM.end();
 }
 
@@ -41,12 +42,12 @@ String EEPROMKVClass::read(String k) {
 }
 
 int EEPROMKVClass::put(String k, String v) {
-  return EEPROMKVClass::write( k, v);
+  return EEPROMKVClass::write(k, v);
 }
 
 int EEPROMKVClass::write(String k, String v) {
   String data_str;
-  int write_result = 1;
+  int return_val = 1;
   EEPROMKVClass::read_all();
   EEPROM.begin(EEPROM_SIZE);
   json_data[k] = v;
@@ -57,10 +58,12 @@ int EEPROMKVClass::write(String k, String v) {
       EEPROM.write(i, data_str.charAt(i));
     }
     EEPROM.write(data_str.length(), '\0');
+    EEPROM.commit();
   } else {
     Serial.println("ERROR: Not enough space of EEPROM. (" + String(EEPROM_SIZE) + ")");
-    write_result = 0;
+    return_val = 0;
   }
+ 
   EEPROM.end();
-  return write_result;
+  return return_val;
 }

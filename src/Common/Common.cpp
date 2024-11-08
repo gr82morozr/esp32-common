@@ -1,8 +1,10 @@
 #include <Arduino.h>
 #include "Common.h"
 
-void init() {
-  Serial.begin(_BAUD_RATE_);
+void common_init() {
+  if (Serial.availableForWrite() == 0) {
+    Serial.begin(_BAUD_RATE_);
+  }
   setCpuFrequencyMhz(240); 
 }
 
