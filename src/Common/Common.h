@@ -8,7 +8,7 @@
 
 #define _BAUD_RATE_         115200
 #define DELAY(x)            vTaskDelay(pdMS_TO_TICKS(x))
-
+#define SYS_HALT            while(true)
 #ifdef _DEBUG_
     #define PRINT(x)        Serial.print(x)
     #define PRINTF(x, y)    Serial.print(x, y)
