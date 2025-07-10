@@ -8,6 +8,21 @@ void common_init() {
   setCpuFrequencyMhz(240); 
 }
 
+void logMessage(const char* funcName, unsigned long timestamp, const char* msg) {
+  // Format: fixed width timestamp (9 chars) + fixed width function name (10 chars)
+  char line[128];
+  snprintf(line, sizeof(line), "[%8lu] %-16s: %s", timestamp, funcName, msg);
+  Serial.println(line);
+}
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, const char* fmt, ...) {
+    char buf[128];  // Adjust size as needed
+    va_list args;
+    va_start(args, fmt);
+    vsnprintf(buf, sizeof(buf), fmt, args);
+    va_end(args);
+    Serial.printf("[%lu] [%s] [%s] %s\n", ms, levelStr, func, buf);
+}
+
 
 
 /*************************************************

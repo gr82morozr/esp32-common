@@ -6,10 +6,48 @@
 #include "freertos/task.h"      // Required to use vTaskDelay(), xTaskCreate(), etc.
 #include "Utils/eepromkv.h"
 
+/* =========================================================== 
+  * 
+  *  Common definitions and functions for ESP32 projects
+  * 
+  * =========================================================== */
+
+
+
+
+// Define log levels  
+#define LOG_LEVEL_NONE      0
+#define LOG_LEVEL_ERROR     1
+#define LOG_LEVEL_WARN      2
+#define LOG_LEVEL_INFO      3
+#define LOG_LEVEL_DEBUG     4
+
+// Define the current log level
+#ifndef CURRENT_LOG_LEVEL
+  #define CURRENT_LOG_LEVEL LOG_LEVEL_INFO
+#endif
+
+// Define the log level strings
+#define LOG_BASE(level, levelStr, ...) \
+  do { if ((level) <= CURRENT_LOG_LEVEL) logMessagef(__FUNCTION__, (levelStr), millis(), __VA_ARGS__); } while (0)
+
+// Define the log macros
+#define LOG_ERROR(...)    LOG_BASE(LOG_LEVEL_ERROR, "ERRO", __VA_ARGS__)
+#define LOG_WARN(...)     LOG_BASE(LOG_LEVEL_WARN,  "WARN", __VA_ARGS__)
+#define LOG_INFO(...)     LOG_BASE(LOG_LEVEL_INFO,  "INFO", __VA_ARGS__)
+#define LOG_DEBUG(...)    LOG_BASE(LOG_LEVEL_DEBUG, "DBUG", __VA_ARGS__)
+#define LOG(...)          LOG_BASE(LOG_LEVEL_INFO, "INFO", __VA_ARGS__)
+
+// Define the log macro for errors with a function name
+#define LED_BUILTIN         2
+#define BUILTIN_LED         LED_BUILTIN
 #define _BAUD_RATE_         115200
 #define DELAY(x)            vTaskDelay(pdMS_TO_TICKS(x))
 #define _DELAY_(x)          vTaskDelay(pdMS_TO_TICKS(x))
 #define SYS_HALT            while(true)
+
+
+
 #ifdef _DEBUG_
     #define PRINT(x)        Serial.print(x)
     #define PRINTF(x, y)    Serial.print(x, y)
@@ -25,9 +63,12 @@
 
 void common_init();
 
+
+
+
+
+// Common functions
 int sign(float x);
-
-
 String to_str(char * data);
 
 char * to_chars(int data);
@@ -37,8 +78,7 @@ char * to_chars(String data);
 char * copy_chars(char * src_chars);
 char * concat_chars(char * src1_chars, char * src2_chars);
 char * concat_chars(char * src1_chars, char * src2_chars, char * src3_chars);
-
-
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, const char* fmt, ...) ;
 
 
 // Fast implementation of GPIO functions
