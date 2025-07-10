@@ -29,7 +29,8 @@
 
 // Define the log level strings
 #define LOG_BASE(level, levelStr, ...) \
-  do { if ((level) <= CURRENT_LOG_LEVEL) logMessagef(__FUNCTION__, (levelStr), millis(), __VA_ARGS__); } while (0)
+ do { if ((level) <= CURRENT_LOG_LEVEL) logMessagef(__FUNCTION__, (levelStr), millis(), __VA_ARGS__); } while (0)
+
 
 // Define the log macros
 #define LOG_ERROR(...)    LOG_BASE(LOG_LEVEL_ERROR, "ERRO", __VA_ARGS__)
@@ -79,6 +80,7 @@ char * copy_chars(char * src_chars);
 char * concat_chars(char * src1_chars, char * src2_chars);
 char * concat_chars(char * src1_chars, char * src2_chars, char * src3_chars);
 void logMessagef(const char* func, const char* levelStr, unsigned long ms, const char* fmt, ...) ;
+
 
 
 // Fast implementation of GPIO functions
