@@ -25,6 +25,9 @@ void logMessagef(const char* func, const char* levelStr, unsigned long ms, const
     Serial.printf("[%lu] [%s] [%s] %s\n", ms, levelStr, func, buf);
 }
 
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, const String& msg) {
+    Serial.printf("[%lu] [%s] [%s] %s\n", ms, levelStr, func, msg.c_str());
+}
 
 /*************************************************
  * 
