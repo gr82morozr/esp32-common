@@ -29,6 +29,25 @@ void logMessagef(const char* func, const char* levelStr, unsigned long ms, const
     Serial.printf("[%lu] [%s] [%s] %s\n", ms, levelStr, func, msg.c_str());
 }
 
+// Overload for float/double
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, float val) {
+    Serial.printf("[%lu] [%s] [%s] %f\n", ms, levelStr, func, val);
+}
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, double val) {
+    Serial.printf("[%lu] [%s] [%s] %f\n", ms, levelStr, func, val);
+}
+
+// Overload for int/long/etc
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, int val) {
+    Serial.printf("[%lu] [%s] [%s] %d\n", ms, levelStr, func, val);
+}
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, long val) {
+    Serial.printf("[%lu] [%s] [%s] %ld\n", ms, levelStr, func, val);
+}
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, unsigned long val) {
+    Serial.printf("[%lu] [%s] [%s] %lu\n", ms, levelStr, func, val);
+}
+
 /*************************************************
  * 
  *  Common math functions
