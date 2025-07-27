@@ -39,6 +39,7 @@
 #define LOG_DEBUG(...) LOG_BASE(LOG_LEVEL_DEBUG, "DBUG", __VA_ARGS__)
 #define LOG(...) LOG_BASE(LOG_LEVEL_INFO, "INFO", __VA_ARGS__)
 
+
 // Define the log macro for errors with a function name
 #define LED_BUILTIN 2
 #define BUILTIN_LED LED_BUILTIN
@@ -63,17 +64,27 @@ void common_init();
 
 // Common functions
 int sign(float x);
-String to_str(char* data);
+String to_str(char * data);
 
-char* to_chars(int data);
-char* to_chars(long data);
-char* to_chars(double data);
-char* to_chars(String data);
-char* copy_chars(char* src_chars);
-char* concat_chars(char* src1_chars, char* src2_chars);
-char* concat_chars(char* src1_chars, char* src2_chars, char* src3_chars);
-void logMessagef(const char* func, const char* levelStr, unsigned long ms,
-                 const char* fmt, ...);
+char * to_chars(int data);
+char * to_chars(long data);
+char * to_chars(double data);
+char * to_chars(String data);
+char * copy_chars(char * src_chars);
+char * concat_chars(char * src1_chars, char * src2_chars);
+char * concat_chars(char * src1_chars, char * src2_chars, char * src3_chars);
+
+
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, const char* fmt, ...) ;
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, const String& msg);
+// Overload for float/double
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, float val) ;
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, double val) ;
+// Overload for int/long/etc
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, int val) ;
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, long val);
+void logMessagef(const char* func, const char* levelStr, unsigned long ms, unsigned long val);
+
 
 // Fast implementation of GPIO functions
 static inline void toggleGPIO(uint8_t pin) {
